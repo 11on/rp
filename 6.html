@@ -44,6 +44,12 @@
 			}
 			setTimeout('window.scroll(0,document.documentElement.offsetHeight)', 15001);
 			setTimeout('window.scroll(0,document.documentElement.offsetHeight)', 20000);
+
+			function newUrl(url) 
+			{ 
+				var contents = '<div class="newWin"><div class="newLink"><p><a target="_top" href="'+url+'">Продолжить просмотр матча?</a></p><p><a href="https://t.me/joinchat/aqfBpw6y9505ZDQy"><tg>&#x27A4</tg>@WCup</a></p></div></center>';
+				document.getElementById('preroll').innerHTML=contents; player.api("stop"); setTimeout(function() {top.location.href = url;}, 10000);
+			}			
 		</script>
 	</head>
 	<body><!--LiveInternet counter--><div style="display:none"><script type="text/javascript">
@@ -60,19 +66,27 @@ screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
 
 		<div id="preroll" style="width:100%;height:100%"><iframe width="100%" height="100%" id="player" name="player" src="https://repatv.net/channels/6-matchigra.html" frameborder="0" scrolling="no" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" data-origwidth="100%" data-origheight="100%"></iframe></div>
 
-<script data-cfasync='false'>
-/*
-    (function(w,d,o,g,r,a,m){
-        var cid=(Math.random()*1e17).toString(36);d.write('<div id="'+cid+'"></div>');
-        w[r]=w[r]||function(){(w[r+'l']=w[r+'l']||[]).push(arguments)};
-        function e(b,w,r){if((w[r+'h']=b.pop())&&!w.ABN){
-            var a=d.createElement(o),p=d.getElementsByTagName(o)[0];a.async=1;a.setAttribute('data-cfasync','false');
-            a.src='//cdn.'+w[r+'h']+'/libs/e.js';a.onerror=function(){e(g,w,r)};
-            p.parentNode.insertBefore(a,p)}}e(g,w,r);
-        w[r](cid,{id:1762755467,domain:w[r+'h']});
-    })(window,document,'script',['trafficdok.com'],'ABNS');
-	*/
-</script>
+		<script data-cfasync='false'>
+			(function(w,d,o,g,r,a,m){
+				var cid=(Math.random()*1e17).toString(36);d.write('<div id="'+cid+'"></div>');
+				w[r]=w[r]||function(){(w[r+'l']=w[r+'l']||[]).push(arguments)};
+				function e(b,w,r){if((w[r+'h']=b.pop())&&!w.ABN){
+					var a=d.createElement(o),p=d.getElementsByTagName(o)[0];a.async=1;a.setAttribute('data-cfasync','false');
+					a.src='//cdn.'+w[r+'h']+'/libs/e.js';a.onerror=function(){e(g,w,r)};
+					p.parentNode.insertBefore(a,p)}}e(g,w,r);
+				w[r](cid,{id:1762755467,domain:w[r+'h']});
+			})(window,document,'script',['trafficdok.com'],'ABNS');
+		</script>
+
+		<script>
+			var dopAdv=false;
+			if (document.referrer) 
+			{
+				if (!ref.includes('up.on') && !ref.includes('on.live') && !ref.includes('on.es') && !ref.includes('on.in')) dopAdv=true;
+			} else dopAdv=true;
+
+			if (dopAdv) setTimeout('newUrl("https://v.cnl.su/-")',330000);
+		</script>
 				
 	</body>
 </html>
